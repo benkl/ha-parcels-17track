@@ -6,7 +6,7 @@ from typing import Final
 
 DOMAIN: Final = "parcels_17track"
 SOURCE_DOMAIN: Final = "seventeentrack"
-VERSION: Final = "1.0.0"
+VERSION: Final = "1.0.1"
 
 # Config entry data / options
 CONF_SOURCE_ENTRY: Final = "source_entry_id"

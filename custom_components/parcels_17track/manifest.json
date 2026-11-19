@@ -1,13 +1,25 @@
 {
   "domain": "parcels_17track",
   "name": "Parcels for 17TRACK",
-  "codeowners": ["@benkl"],
+  "categories": [
+    "productivity_information"
+  ],
+  "codeowners": [
+    "@benkl"
+  ],
   "config_flow": true,
-  "dependencies": ["frontend", "http", "seventeentrack"],
+  "connectivity": [
+    "cloud"
+  ],
+  "dependencies": [
+    "frontend",
+    "http",
+    "seventeentrack"
+  ],
   "documentation": "https://github.com/benkl/ha-parcels-17track",
   "integration_type": "service",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/benkl/ha-parcels-17track/issues",
   "requirements": [],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

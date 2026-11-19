@@ -150,9 +150,24 @@ def notifications() -> str:
     return "\n".join(p)
 
 
+
+def brand_icon() -> str:
+    """Square brand icon (rendered to custom_components/parcels_17track/brand/*.png)."""
+    return "\n".join([
+        '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">',
+        '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">'
+        '<stop offset="0" stop-color="#0b7bd6"/><stop offset=".55" stop-color="#03a9f4"/><stop offset="1" stop-color="#18c5b6"/>'
+        '</linearGradient></defs>',
+        '<rect width="512" height="512" rx="112" fill="url(#g)"/>',
+        icon("package-variant-closed-check", 86, 86, 340, "#ffffff"),
+        "</svg>",
+    ])
+
+
 if __name__ == "__main__":
     (HERE / "banner.svg").write_text(banner(), encoding="utf-8")
     (HERE / "card-light.svg").write_text(card("light"), encoding="utf-8")
     (HERE / "card-dark.svg").write_text(card("dark"), encoding="utf-8")
     (HERE / "notifications.svg").write_text(notifications(), encoding="utf-8")
+    (HERE / "brand-icon.svg").write_text(brand_icon(), encoding="utf-8")
     print("written:", ", ".join(sorted(p.name for p in HERE.glob("*.svg"))))
