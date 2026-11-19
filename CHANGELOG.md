@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] – 2026-11-20
+
+### Added
+- Brand icon (`brand/icon.png`, `icon@2x.png`) so Home Assistant and HACS show the integration's own icon.
+- Manifest `categories` (`productivity_information`) and `connectivity` (`cloud`).
+
 ## [1.0.0] – 2026-11-20
 
 ### Added
@@ -15,4 +21,5 @@ All notable changes to this project are documented here. The format follows [Kee
 - HACS README with banner, card and notification previews, full reference, automation examples and FAQ.
 - Issue templates, Dependabot for GitHub Actions, and CI (hassfest, HACS validation, tests).
 
+[1.0.1]: https://github.com/benkl/ha-parcels-17track/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/benkl/ha-parcels-17track/releases/tag/v1.0.0

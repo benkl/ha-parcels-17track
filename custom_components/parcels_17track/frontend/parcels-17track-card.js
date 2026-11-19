@@ -1,6 +1,6 @@
 /* Parcels for 17TRACK – dashboard card (no build step, no dependencies). */
 const DOMAIN = "parcels_17track";
-const CARD_VERSION = "1.0.0";
+const CARD_VERSION = "1.0.1";
 
 const STATES = {
   alert: { icon: "mdi:alert-circle-outline", color: "var(--error-color, #db4437)" },
