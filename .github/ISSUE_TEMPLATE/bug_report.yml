@@ -1,0 +1,41 @@
+name: 🐞 Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time! Please leave tracking numbers out of logs and screenshots.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Parcels for 17TRACK version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: ha
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.11.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Integration / sensors, Notifications, Dashboard card, Services, Auto-archive, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / diagnostics
+      description: Enable debug logging for `custom_components.parcels_17track`, or attach the diagnostics download.
+      render: text
