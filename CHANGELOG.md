@@ -2,12 +2,6 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
-
-### Added
-- Full HACS README with banner, card and notification previews, configuration and entity reference, automation examples and FAQ.
-- Issue templates, Dependabot for GitHub Actions, and a changelog.
-
 ## [1.0.0] – 2026-11-20
 
 ### Added
@@ -18,6 +12,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - `parcels_17track_changed` event and push notifications, with parcel states remembered across restarts.
 - Bundled `custom:parcels-17track-card` with a visual editor and an add-parcel form.
 - English and German translations, plus diagnostics with personal data left out.
+- HACS README with banner, card and notification previews, full reference, automation examples and FAQ.
+- Issue templates, Dependabot for GitHub Actions, and CI (hassfest, HACS validation, tests).
 
-[Unreleased]: https://github.com/benkl/ha-parcels-17track/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/benkl/ha-parcels-17track/releases/tag/v1.0.0
