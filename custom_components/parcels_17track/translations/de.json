@@ -1,0 +1,92 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pakete für 17TRACK",
+        "description": "Wähle das 17TRACK-Konto (eingerichtet über die eingebaute 17TRACK-Integration), für das die Paketübersicht erstellt werden soll.",
+        "data": { "source_entry_id": "17TRACK-Konto" }
+      }
+    },
+    "abort": {
+      "no_source": "Richte zuerst die eingebaute 17TRACK-Integration ein und füge dann Pakete für 17TRACK hinzu.",
+      "already_configured": "Dieses 17TRACK-Konto ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Einstellungen Pakete für 17TRACK",
+        "data": {
+          "scan_interval": "Aktualisierungsintervall",
+          "notify_targets": "Benachrichtigungen senden an",
+          "notify_events": "Benachrichtigen bei",
+          "archive_after_days": "Zugestellte Pakete archivieren nach",
+          "out_for_delivery_keywords": "Stichwörter für „in Zustellung“"
+        },
+        "data_description": {
+          "scan_interval": "Wie oft 17TRACK nach Neuigkeiten gefragt wird.",
+          "notify_targets": "Notify-Dienste, z. B. notify.mobile_app_mein_handy. Leer lassen, um nur das Event parcels_17track_changed auszulösen.",
+          "notify_events": "Welche Änderungen eine Benachrichtigung auslösen.",
+          "archive_after_days": "Pakete so viele Tage nach der Zustellung in 17TRACK archivieren (täglich um 04:00). 0 schaltet es ab.",
+          "out_for_delivery_keywords": "Durch Kommas getrennt. Enthält das letzte Ereignis eines dieser Wörter, wird das Paket als „Heute in Zustellung“ angezeigt."
+        }
+      }
+    }
+  },
+  "selector": {
+    "notify_events": {
+      "options": {
+        "new": "Neues Paket hinzugefügt",
+        "in_transit": "Unterwegs",
+        "out_for_delivery": "Heute in Zustellung",
+        "ready_for_pickup": "Abholbereit",
+        "delivered": "Zugestellt",
+        "problem": "Problem / Zustellung fehlgeschlagen"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "open": { "name": "Offene Pakete" },
+      "in_transit": { "name": "Unterwegs" },
+      "out_for_delivery": { "name": "In Zustellung" },
+      "ready_for_pickup": { "name": "Abholbereit" },
+      "delivered": { "name": "Zugestellt" },
+      "problems": { "name": "Probleme" },
+      "last_update": { "name": "Letzte Aktualisierung" }
+    },
+    "binary_sensor": {
+      "delivery_today": { "name": "Zustellung heute" }
+    }
+  },
+  "services": {
+    "add_parcel": {
+      "name": "Paket hinzufügen",
+      "description": "Fügt eine Sendungsnummer zu deinem 17TRACK-Konto hinzu.",
+      "fields": {
+        "tracking_number": { "name": "Sendungsnummer", "description": "Die Sendungsnummer des Pakets." },
+        "name": { "name": "Bezeichnung", "description": "Optionaler Name, der statt der Sendungsnummer angezeigt wird." },
+        "config_entry_id": { "name": "Konto", "description": "Nur bei mehreren 17TRACK-Konten nötig." }
+      }
+    },
+    "archive_parcel": {
+      "name": "Paket archivieren",
+      "description": "Archiviert ein Paket in deinem 17TRACK-Konto.",
+      "fields": {
+        "tracking_number": { "name": "Sendungsnummer", "description": "Die Sendungsnummer des Pakets." },
+        "config_entry_id": { "name": "Konto", "description": "Nur bei mehreren 17TRACK-Konten nötig." }
+      }
+    },
+    "refresh": {
+      "name": "Aktualisieren",
+      "description": "Fragt 17TRACK sofort nach Neuigkeiten.",
+      "fields": {
+        "config_entry_id": { "name": "Konto", "description": "Nur bei mehreren 17TRACK-Konten nötig." }
+      }
+    }
+  },
+  "exceptions": {
+    "no_entry": { "message": "Kein geladener Eintrag für Pakete für 17TRACK gefunden." },
+    "invalid_number": { "message": "Das sieht nicht nach einer Sendungsnummer aus." }
+  }
+}

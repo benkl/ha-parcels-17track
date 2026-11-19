@@ -1,0 +1,34 @@
+add_parcel:
+  fields:
+    tracking_number:
+      required: true
+      example: "JJD000390012345678"
+      selector:
+        text:
+    name:
+      example: "Headphones"
+      selector:
+        text:
+    config_entry_id:
+      selector:
+        config_entry:
+          integration: parcels_17track
+
+archive_parcel:
+  fields:
+    tracking_number:
+      required: true
+      example: "JJD000390012345678"
+      selector:
+        text:
+    config_entry_id:
+      selector:
+        config_entry:
+          integration: parcels_17track
+
+refresh:
+  fields:
+    config_entry_id:
+      selector:
+        config_entry:
+          integration: parcels_17track

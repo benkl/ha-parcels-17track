@@ -1,0 +1,92 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Parcels for 17TRACK",
+        "description": "Pick the 17TRACK account (set up with the built-in 17TRACK integration) to build the parcel overview for.",
+        "data": { "source_entry_id": "17TRACK account" }
+      }
+    },
+    "abort": {
+      "no_source": "Set up the built-in 17TRACK integration first, then add Parcels for 17TRACK.",
+      "already_configured": "This 17TRACK account is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Parcels for 17TRACK settings",
+        "data": {
+          "scan_interval": "Refresh interval",
+          "notify_targets": "Send notifications to",
+          "notify_events": "Notify about",
+          "archive_after_days": "Archive delivered parcels after",
+          "out_for_delivery_keywords": "\"Out for delivery\" keywords"
+        },
+        "data_description": {
+          "scan_interval": "How often 17TRACK is asked for updates.",
+          "notify_targets": "Notify services, e.g. notify.mobile_app_my_phone. Leave empty to only fire the parcels_17track_changed event.",
+          "notify_events": "Which changes trigger a notification.",
+          "archive_after_days": "Archive parcels in 17TRACK this many days after delivery (runs daily at 04:00). 0 turns it off.",
+          "out_for_delivery_keywords": "Comma separated. If a parcel's latest event contains one of these, it is shown as out for delivery."
+        }
+      }
+    }
+  },
+  "selector": {
+    "notify_events": {
+      "options": {
+        "new": "New parcel added",
+        "in_transit": "On its way",
+        "out_for_delivery": "Out for delivery today",
+        "ready_for_pickup": "Ready for pickup",
+        "delivered": "Delivered",
+        "problem": "Problem / delivery failed"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "open": { "name": "Open parcels" },
+      "in_transit": { "name": "In transit" },
+      "out_for_delivery": { "name": "Out for delivery" },
+      "ready_for_pickup": { "name": "Ready for pickup" },
+      "delivered": { "name": "Delivered" },
+      "problems": { "name": "Problems" },
+      "last_update": { "name": "Last update" }
+    },
+    "binary_sensor": {
+      "delivery_today": { "name": "Delivery today" }
+    }
+  },
+  "services": {
+    "add_parcel": {
+      "name": "Add parcel",
+      "description": "Adds a tracking number to your 17TRACK account.",
+      "fields": {
+        "tracking_number": { "name": "Tracking number", "description": "The parcel's tracking number." },
+        "name": { "name": "Name", "description": "Optional name shown instead of the tracking number." },
+        "config_entry_id": { "name": "Account", "description": "Only needed with more than one 17TRACK account." }
+      }
+    },
+    "archive_parcel": {
+      "name": "Archive parcel",
+      "description": "Archives a parcel in your 17TRACK account.",
+      "fields": {
+        "tracking_number": { "name": "Tracking number", "description": "The parcel's tracking number." },
+        "config_entry_id": { "name": "Account", "description": "Only needed with more than one 17TRACK account." }
+      }
+    },
+    "refresh": {
+      "name": "Refresh",
+      "description": "Asks 17TRACK for updates right now.",
+      "fields": {
+        "config_entry_id": { "name": "Account", "description": "Only needed with more than one 17TRACK account." }
+      }
+    }
+  },
+  "exceptions": {
+    "no_entry": { "message": "No loaded Parcels for 17TRACK entry found." },
+    "invalid_number": { "message": "That doesn't look like a tracking number." }
+  }
+}

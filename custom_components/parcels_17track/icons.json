@@ -1,0 +1,24 @@
+{
+  "entity": {
+    "sensor": {
+      "open": { "default": "mdi:package-variant-closed" },
+      "in_transit": { "default": "mdi:truck-delivery-outline" },
+      "out_for_delivery": { "default": "mdi:truck-fast-outline" },
+      "ready_for_pickup": { "default": "mdi:storefront-outline" },
+      "delivered": { "default": "mdi:package-variant-closed-check" },
+      "problems": { "default": "mdi:alert-circle-outline" },
+      "last_update": { "default": "mdi:update" }
+    },
+    "binary_sensor": {
+      "delivery_today": {
+        "default": "mdi:truck-outline",
+        "state": { "on": "mdi:truck-fast" }
+      }
+    }
+  },
+  "services": {
+    "add_parcel": { "service": "mdi:package-variant-plus" },
+    "archive_parcel": { "service": "mdi:archive-arrow-down-outline" },
+    "refresh": { "service": "mdi:refresh" }
+  }
+}
